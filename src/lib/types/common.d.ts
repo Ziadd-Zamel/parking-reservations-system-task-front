@@ -8,3 +8,10 @@ declare type RouteProps = {
 declare type LayoutProps = {
   children: React.ReactNode;
 } & Pick<RouteProps, "params">;
+
+export interface User {
+  id: string;
+  username: string;
+  name: string;
+  role: "admin" | "employee";
+}
