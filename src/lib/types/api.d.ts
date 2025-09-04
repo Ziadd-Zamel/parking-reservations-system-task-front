@@ -1,10 +1,10 @@
 declare type ErrorResponse = {
-  error: string;
-  code?: string;
+  status: string;
   message?: string;
+  errors?: {
+    field: [""];
+  };
 };
-
-declare type APIResponse<T> = SuccessfulResponse<T> | ErrorResponse;
 
 declare type DataBaseProbs = {
   _id: string;
@@ -12,8 +12,6 @@ declare type DataBaseProbs = {
   updatedAt: string;
 };
 
-declare type SuccessfulResponse<T> = {
-  message: string;
-} & T;
+declare type SuccessfulResponse<T> = T;
 
 declare type APIResponse<T> = SuccessfulResponse<T> | ErrorResponse;
